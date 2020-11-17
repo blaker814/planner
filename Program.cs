@@ -36,9 +36,15 @@ namespace Planner
             Kroger.Construct();
             Kroger.Purchase("Bob Ross");
 
-            FiveOneTwoEigth.Display();
-            Bank.Display();
-            Kroger.Display();
+            City ricksPlace = new City();
+            ricksPlace.AddBuilding(FiveOneTwoEigth);
+            ricksPlace.AddBuilding(Bank);
+            ricksPlace.AddBuilding(Kroger);
+
+            foreach (Building building in ricksPlace.AllBuildings)
+            {
+                building.Display();
+            }
         }
     }
 }
